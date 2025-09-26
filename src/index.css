@@ -17,41 +17,52 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Mosaic-AI Brand Colors */
+    --primary: 224 76% 48%; /* #1E40AF */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 188 86% 53%; /* #0891B2 */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 262 83% 58%; /* #7C3AED */
+    --accent-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%; /* #059669 */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 32 95% 44%; /* #D97706 */
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%; /* #DC2626 */
+    --destructive-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 224 76% 48%;
+
+    /* Custom Mosaic gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(224 76% 48%), hsl(262 83% 58%));
+    --gradient-success: linear-gradient(135deg, hsl(160 84% 39%), hsl(188 86% 53%));
+    --gradient-warning: linear-gradient(135deg, hsl(32 95% 44%), hsl(32 85% 54%));
+
+    /* Card backgrounds with subtle tints */
+    --card-primary: 224 76% 97%;
+    --card-success: 160 84% 97%;
+    --card-warning: 32 95% 97%;
+    --card-accent: 262 83% 97%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -65,24 +76,37 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 224 76% 58%; /* Slightly lighter in dark mode */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 188 86% 63%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 262 83% 68%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --success: 160 84% 49%;
+    --success-foreground: 222.2 47.4% 11.2%;
+
+    --warning: 32 95% 54%;
+    --warning-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 224 76% 58%;
+
+    /* Dark mode card backgrounds */
+    --card-primary: 224 76% 8%;
+    --card-success: 160 84% 8%;
+    --card-warning: 32 95% 8%;
+    --card-accent: 262 83% 8%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +124,47 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Custom card variants */
+  .card-primary {
+    @apply bg-[hsl(var(--card-primary))] border-primary/20;
+  }
+  
+  .card-success {
+    @apply bg-[hsl(var(--card-success))] border-success/20;
+  }
+  
+  .card-warning {
+    @apply bg-[hsl(var(--card-warning))] border-warning/20;
+  }
+  
+  .card-accent {
+    @apply bg-[hsl(var(--card-accent))] border-accent/20;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-warning {
+    background: var(--gradient-warning);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    @apply animate-in fade-in duration-300;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-200 hover:scale-105 hover:shadow-lg;
   }
 }
