@@ -1,13 +1,14 @@
 import { NetworkMetricCard } from "./NetworkMetricCard";
 import { KeyCollaboratorCard } from "./KeyCollaboratorCard";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Network, AlertCircle } from "lucide-react";
 import { 
   networkMetricsData, 
   keyCollaboratorsData, 
-  networkInsightsData 
+  networkInsightsData,
+  organizationalNetworkData,
 } from "@/lib/data";
+import { OrganizationalNetworkGraph } from "./OrganizationalNetworkGraph";
 
 export const NetworkAnalysis = () => {
   return (
@@ -25,8 +26,8 @@ export const NetworkAnalysis = () => {
       {/* Network Visualization */}
       <div>
         <h2 className="text-2xl font-semibold mb-4">Visualização da Rede</h2>
-        <Card className="h-[500px]">
-          <CardHeader>
+        <Card className="flex flex-col">
+          <CardHeader className="pb-4">
             <CardTitle className="flex items-center gap-2">
               <Network className="h-5 w-5 text-primary" />
               Mapa Organizacional de Rede
@@ -35,19 +36,11 @@ export const NetworkAnalysis = () => {
               Visualização interativa das conexões organizacionais
             </CardDescription>
           </CardHeader>
-          <CardContent className="h-full">
-            <div className="h-full bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 rounded-lg border-2 border-dashed border-muted-foreground/20 flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <Network className="h-16 w-16 text-muted-foreground mx-auto" />
-                <div>
-                  <h3 className="font-semibold text-lg">Mapa Organizacional de Rede</h3>
-                  <p className="text-muted-foreground">
-                    Visualização das conexões e influências organizacionais
-                  </p>
-                </div>
-                <Badge variant="outline">Módulo em desenvolvimento</Badge>
-              </div>
-            </div>
+          <CardContent className="space-y-4 pt-0">
+            <p className="text-sm text-muted-foreground">
+              A proximidade entre os nós reflete a intensidade da comunicação semanal, enquanto as cores destacam os setores dos colaboradores.
+            </p>
+            <OrganizationalNetworkGraph data={organizationalNetworkData} />
           </CardContent>
         </Card>
       </div>

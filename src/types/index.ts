@@ -49,3 +49,23 @@ export interface NetworkInsight {
   id: string;
   text: string;
 }
+
+export interface OrganizationalNetworkNode {
+  id: string;
+  name: string;
+  role: string;
+  department: string;
+  photoUrl: string;
+}
+
+export interface OrganizationalNetworkLink {
+  id: string;
+  source: string;
+  target: string;
+  frequencyPerWeek: number;
+}
+
+export interface OrganizationalNetworkData {
+  nodes: OrganizationalNetworkNode[];
+  links: OrganizationalNetworkLink[];
+}

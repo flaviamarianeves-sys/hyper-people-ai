@@ -1,5 +1,14 @@
 // Dados mock para a aplicação Mosaic-AI
-import { KPI, ChartData, DepartmentData, Alert, NetworkMetric, KeyCollaborator, NetworkInsight } from "@/types";
+import {
+  KPI,
+  ChartData,
+  DepartmentData,
+  Alert,
+  NetworkMetric,
+  KeyCollaborator,
+  NetworkInsight,
+  OrganizationalNetworkData,
+} from "@/types";
 
 export const kpisData: KPI[] = [
   {
@@ -147,3 +156,117 @@ export const networkInsightsData: NetworkInsight[] = [
     text: "Oportunidade de mentoria cruzada"
   }
 ];
+
+export const organizationalNetworkData: OrganizationalNetworkData = {
+  nodes: [
+    {
+      id: "maria",
+      name: "Maria Silva",
+      role: "CEO",
+      department: "Diretoria",
+      photoUrl: "https://i.pravatar.cc/256?img=48",
+    },
+    {
+      id: "pedro",
+      name: "Pedro Lima",
+      role: "Líder de Tecnologia",
+      department: "Tecnologia",
+      photoUrl: "https://i.pravatar.cc/256?img=12",
+    },
+    {
+      id: "aline",
+      name: "Aline Souza",
+      role: "Engenheira de Software",
+      department: "Tecnologia",
+      photoUrl: "https://i.pravatar.cc/256?img=56",
+    },
+    {
+      id: "rafael",
+      name: "Rafael Costa",
+      role: "Analista Financeiro",
+      department: "Financeiro",
+      photoUrl: "https://i.pravatar.cc/256?img=33",
+    },
+    {
+      id: "carolina",
+      name: "Carolina Mendes",
+      role: "Head de Vendas",
+      department: "Vendas",
+      photoUrl: "https://i.pravatar.cc/256?img=47",
+    },
+    {
+      id: "bruno",
+      name: "Bruno Almeida",
+      role: "Executivo de Contas",
+      department: "Vendas",
+      photoUrl: "https://i.pravatar.cc/256?img=37",
+    },
+    {
+      id: "ana",
+      name: "Ana Costa",
+      role: "Head de RH",
+      department: "RH",
+      photoUrl: "https://i.pravatar.cc/256?img=5",
+    },
+    {
+      id: "julia",
+      name: "Júlia Rocha",
+      role: "Business Partner",
+      department: "RH",
+      photoUrl: "https://i.pravatar.cc/256?img=23",
+    },
+    {
+      id: "carlos",
+      name: "Carlos Pereira",
+      role: "Head de Marketing",
+      department: "Marketing",
+      photoUrl: "https://i.pravatar.cc/256?img=52",
+    },
+    {
+      id: "lucia",
+      name: "Lúcia Ferreira",
+      role: "Designer Sênior",
+      department: "Marketing",
+      photoUrl: "https://i.pravatar.cc/256?img=19",
+    },
+    {
+      id: "gabriel",
+      name: "Gabriel Nunes",
+      role: "Consultor de Vendas",
+      department: "Vendas",
+      photoUrl: "https://i.pravatar.cc/256?img=61",
+    },
+    {
+      id: "fernanda",
+      name: "Fernanda Dias",
+      role: "Assistente Comercial",
+      department: "Vendas",
+      photoUrl: "https://i.pravatar.cc/256?img=65",
+    },
+  ],
+  links: [
+    { id: "maria-pedro", source: "maria", target: "pedro", frequencyPerWeek: 18 },
+    { id: "maria-ana", source: "maria", target: "ana", frequencyPerWeek: 14 },
+    { id: "maria-carlos", source: "maria", target: "carlos", frequencyPerWeek: 12 },
+    { id: "maria-rafael", source: "maria", target: "rafael", frequencyPerWeek: 7 },
+    { id: "pedro-aline", source: "pedro", target: "aline", frequencyPerWeek: 21 },
+    { id: "pedro-ana", source: "pedro", target: "ana", frequencyPerWeek: 9 },
+    { id: "pedro-carolina", source: "pedro", target: "carolina", frequencyPerWeek: 8 },
+    { id: "pedro-lucia", source: "pedro", target: "lucia", frequencyPerWeek: 11 },
+    { id: "aline-lucia", source: "aline", target: "lucia", frequencyPerWeek: 10 },
+    { id: "rafael-carolina", source: "rafael", target: "carolina", frequencyPerWeek: 8 },
+    { id: "rafael-ana", source: "rafael", target: "ana", frequencyPerWeek: 6 },
+    { id: "rafael-carlos", source: "rafael", target: "carlos", frequencyPerWeek: 5 },
+    { id: "carolina-bruno", source: "carolina", target: "bruno", frequencyPerWeek: 24 },
+    { id: "carolina-carlos", source: "carolina", target: "carlos", frequencyPerWeek: 10 },
+    { id: "carolina-ana", source: "carolina", target: "ana", frequencyPerWeek: 6 },
+    { id: "bruno-julia", source: "bruno", target: "julia", frequencyPerWeek: 4 },
+    { id: "bruno-lucia", source: "bruno", target: "lucia", frequencyPerWeek: 5 },
+    { id: "ana-julia", source: "ana", target: "julia", frequencyPerWeek: 17 },
+    { id: "ana-carlos", source: "ana", target: "carlos", frequencyPerWeek: 7 },
+    { id: "carlos-lucia", source: "carlos", target: "lucia", frequencyPerWeek: 23 },
+    { id: "carolina-gabriel", source: "carolina", target: "gabriel", frequencyPerWeek: 2 },
+    { id: "bruno-gabriel", source: "bruno", target: "gabriel", frequencyPerWeek: 1 },
+    { id: "gabriel-fernanda", source: "gabriel", target: "fernanda", frequencyPerWeek: 1 },
+  ],
+};
